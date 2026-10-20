@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Espace d'administration des comptes Project Redline.">
+  <meta name="theme-color" content="#080a0f">
+  <title>Gestion des comptes | Project Redline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script type="module" src="comptes.js"></script>
+</head>
+<body class="accounts-page">
+  <div class="topline"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Project Redline, accueil">
+      <span class="brand-mark">R<span>³</span></span>
+      <span class="brand-copy"><strong>PROJECT REDLINE</strong><small>GESTION DES ACCÈS</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="navigation" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="afterlife.html">Afterlife</a>
+      <a href="federation.html">Fédération Drive Elite</a>
+      <a href="redline-crew.html">Redline Crew</a>
+      <a href="membre-projet.html">Membres</a>
+          <a href="comptes.html">Comptes</a>
+          <a href="pilotes-fde.html" data-page="pilotes-fde.html">Pilotes FDE</a>
+    </nav>
+  </header>
+  <div class="site-banner" role="img" aria-label="Bannière Afterlife avec voiture sportive"></div>
+
+  <main class="accounts-main">
+    <section class="accounts-heading">
+      <p class="eyebrow"><span></span> PROJECT REDLINE · ADMINISTRATION</p>
+      <h1>GESTION DES<br><em>COMPTES.</em></h1>
+      <p>Crée les accès des nouveaux joueurs et définis leur rôle au sein du projet.</p>
+    </section>
+
+    <div id="setup-warning" class="accounts-notice warning" hidden>
+      <strong>Configuration nécessaire</strong>
+      <p>Renseigne l'URL et la clé publique de ton projet Supabase dans <code>assets/supabase-config.js</code>, puis déploie le site.</p>
+    </div>
+    <div id="status-message" class="accounts-notice" role="status" aria-live="polite" hidden></div>
+
+    <section id="login-panel" class="accounts-panel">
+      <div class="panel-heading"><span class="panel-number">01</span><div><h2>CONNEXION ADMIN</h2><p>Accès réservé à un compte ayant le rôle Admin.</p></div></div>
+      <form id="login-form" class="accounts-form">
+        <label for="login-email">Adresse e-mail</label>
+        <input id="login-email" name="email" type="email" autocomplete="username" required placeholder="admin@exemple.fr">
+        <label for="login-password">Mot de passe</label>
+        <input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Ton mot de passe">
+        <button class="button button-primary" type="submit">Se connecter <span>↗</span></button>
+      </form>
+    </section>
+
+    <section id="admin-panel" hidden>
+      <div class="admin-toolbar">
+        <div><p class="section-kicker">ESPACE SÉCURISÉ</p><h2>TABLEAU DE BORD</h2><p id="admin-identity" class="muted-copy"></p></div>
+        <button id="logout-button" class="button button-secondary" type="button">Déconnexion</button>
+      </div>
+      <section class="accounts-panel">
+        <div class="panel-heading"><span class="panel-number">02</span><div><h2>CRÉER UN COMPTE</h2><p>Les nouveaux comptes sont créés avec le rôle sélectionné.</p></div></div>
+        <form id="create-user-form" class="accounts-form two-column-form">
+          <div class="form-field"><label for="display-name">Nom / nom RP</label><input id="display-name" name="displayName" required maxlength="80" placeholder="Ex. Ryan Carter"></div>
+          <div class="form-field"><label for="discord-name">Pseudo Discord</label><input id="discord-name" name="discord" maxlength="80" placeholder="Ex. MrWams"></div>
+          <div class="form-field"><label for="new-email">Adresse e-mail de connexion</label><input id="new-email" name="email" type="email" autocomplete="off" required placeholder="joueur@exemple.fr"></div>
+          <div class="form-field"><label for="new-password">Mot de passe temporaire</label><input id="new-password" name="password" type="password" autocomplete="new-password" minlength="10" required placeholder="10 caractères minimum"><small>Transmets-le au joueur de manière privée.</small></div>
+          <div class="form-field form-field-wide"><label for="new-role">Rôle</label><select id="new-role" name="role" required>
+            <option value="spectateur">Spectateur</option>
+            <option value="crew">Crew</option>
+            <option value="federation">Fédération</option>
+            <option value="admin">Admin</option>
+          </select><small>Le rôle Admin donne accès à la gestion des comptes. Attribue-le uniquement aux personnes de confiance.</small></div>
+          <div class="form-field form-field-wide"><button id="create-user-button" class="button button-primary" type="submit">Créer le compte <span>↗</span></button></div>
+        </form>
+      </section>
+
+      <section class="accounts-panel">
+        <div class="panel-heading"><span class="panel-number">03</span><div><h2>COMPTES EXISTANTS</h2><p>Consulte les joueurs et modifie leur rôle.</p></div><button id="refresh-users" type="button" class="refresh-button" title="Actualiser la liste">↻</button></div>
+        <div class="table-wrap">
+          <table class="accounts-table">
+            <thead><tr><th>Joueur</th><th>Identifiant</th><th>Rôle</th><th>Créé le</th></tr></thead>
+            <tbody id="users-table-body"><tr><td colspan="4" class="empty-state">Connecte-toi pour afficher les comptes.</td></tr></tbody>
+          </table>
+        </div>
+        <p class="table-footnote">Tu ne peux pas modifier ton propre rôle depuis cette page, pour éviter de verrouiller accidentellement l'administration.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html"><span class="brand-mark">R<span>³</span></span><span class="brand-copy"><strong>PROJECT REDLINE</strong><small>UNE DIRECTION · TROIS ENTITÉS</small></span></a>
+    <p>Gestion des accès · Project Redline</p>
+    <span>© <span id="year"></span></span>
+  </footer>
+</body>
+</html>
