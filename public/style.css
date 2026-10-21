@@ -737,3 +737,6 @@ img.crew-logo-image {
 }
   .pilot-photo-field, .pilot-submit-field { grid-column: auto; }
 }
+.entity-crew .entity-card-art.crew-logo-art {
+  height: 230px !important;
+}
