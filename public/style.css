@@ -552,8 +552,8 @@ h2 span { color: var(--red); }
 img.crew-logo-image {
   display: block;
   flex: 0 0 auto !important;
-  width: 100% !important;
-  height: 100% !important;
+  width: 150% !important;
+  height: 150% !important;
   max-width: none !important;
   max-height: none !important;
   object-fit: contain !important;
