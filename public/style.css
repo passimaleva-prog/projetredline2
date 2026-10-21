@@ -108,7 +108,15 @@ h2 span { color: var(--red); }
 .timeline-marker { width: 9px; height: 9px; margin: 5px auto 0; background: var(--red); box-shadow: 0 0 0 5px rgba(230,59,50,.13); z-index: 1; }
 .timeline-content h3 { font-size: 28px; margin-bottom: 12px; }
 .timeline-content p { max-width: 700px; color: var(--muted); font-size: 13px; }
-.timeline-content ul { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; padding: 0; margin: 18px 0 0; }
+.timeline-content ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+}
 .timeline-content li { color: #b7b7b7; font-size: 11px; }
 .timeline-content li::before { content: "＋"; color: var(--red); margin-right: 7px; }
 .values { text-align: center; padding: 100px 24px; background: #1a1b1c; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
