@@ -539,7 +539,8 @@ h2 span { color: var(--red); }
   display: flex;
   align-items: center;
   justify-content: center;
-  isolation: 220px;
+  isolation: isolate;
+  height: 250px !important;
 }
 .entity-card-art.crew-logo-art .art-ring,
 .entity-card-art.crew-logo-art .art-speedlines {
@@ -556,6 +557,7 @@ h2 span { color: var(--red); }
   object-position: center;
   padding: 4px;
   filter: drop-shadow(0 8px 14px rgba(0,0,0,.35));
+  transform: scale(1.15);
 }
 .crew-hero-stamp {
   align-items: center;
