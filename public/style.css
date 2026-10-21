@@ -718,5 +718,20 @@ h2 span { color: var(--red); }
   .pilots-grid { grid-template-columns: 1fr; }
   .pilot-card-photo { height: 250px; }
   .pilot-form { grid-template-columns: 1fr; }
+  /* Logo image dans le coin supérieur gauche */
+.site-header .brand-image {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 0;
+}
+
+.site-header .brand-image .brand-logo {
+  display: block;
+  width: 192px;
+  max-width: 42vw;
+  height: auto;
+  object-fit: contain;
+}
   .pilot-photo-field, .pilot-submit-field { grid-column: auto; }
 }
