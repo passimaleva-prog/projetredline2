@@ -379,6 +379,7 @@ h2 span { color: var(--red); }
 /* Avatars fournis pour l'annuaire des membres */
 .member-portrait img.avatar-mr-wams { object-fit: contain; padding: 10px; }
 .member-portrait img.avatar-cysar,
+.member-portrait img.avatar-slay,
 .member-portrait img.avatar-jokker,
 .member-portrait img.avatar-vinnz,
 .member-portrait img.avatar-eva { object-fit: cover; padding: 0; }
@@ -392,6 +393,7 @@ h2 span { color: var(--red); }
 }
 .member-portrait img.avatar-mr-wams,
 .member-portrait img.avatar-cysar,
+.member-portrait img.avatar-slay,
 .member-portrait img.avatar-jokker,
 .member-portrait img.avatar-vinnz,
 .member-portrait img.avatar-eva {
