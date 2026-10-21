@@ -546,18 +546,18 @@ h2 span { color: var(--red); }
 .entity-card-art.crew-logo-art .art-speedlines {
   z-index: -1;
 }
-.crew-logo-image {
+img.crew-logo-image {
   display: block;
-  position: relative;
-  z-index: 1;
-  width: 200%;
-  height: 200%;
-  max-height: none;
-  object-fit: contain;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
   object-position: center;
-  padding: 4px;
-  filter: drop-shadow(0 8px 14px rgba(0,0,0,.35));
-  transform: scale(1.15);
+  padding: 0 !important;
+  transform: scale(1.45) !important;
+}
 }
 .crew-hero-stamp {
   align-items: center;
