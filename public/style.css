@@ -581,8 +581,8 @@ img.crew-logo-image {
 }
 @media (max-width: 700px) {
   .crew-hero-stamp img {
-    width: 68px;
-    height: 68px;
+    width: 150px;
+    height: 150px;
   }
 }
 
