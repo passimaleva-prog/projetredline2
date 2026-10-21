@@ -568,8 +568,8 @@ img.crew-logo-image {
 }
 .crew-hero-stamp img {
   display: block;
-  width: clamp(74px, 9vw, 120px);
-  height: clamp(74px, 9vw, 120px);
+  width: clamp(90px, 11vw, 150px);
+  height: clamp(90px, 11vw, 150px);
   object-fit: contain;
   background: rgba(0,0,0,.35);
   border: 1px solid rgba(0,102,255,.45);
@@ -581,8 +581,8 @@ img.crew-logo-image {
 }
 @media (max-width: 700px) {
   .crew-hero-stamp img {
-    width: 150px;
-    height: 150px;
+    width: 82px;
+    height: 82px;
   }
 }
 
