@@ -543,7 +543,7 @@ h2 span { color: var(--red); }
   align-items: center;
   justify-content: center;
   isolation: isolate;
-  height: 250px !important;
+  height: 250px;
 }
 .entity-card-art.crew-logo-art .art-ring,
 .entity-card-art.crew-logo-art .art-speedlines {
@@ -551,15 +551,15 @@ h2 span { color: var(--red); }
 }
 img.crew-logo-image {
   display: block;
-  flex: 0 0 auto !important;
-  width: 150% !important;
-  height: 150% !important;
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: contain !important;
+  flex: 0 0 auto;
+  width: 200%;
+  height: 200%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
   object-position: center;
-  padding: 0 !important;
-  transform: scale(1.45) !important;
+  padding: 0;
+  transform: scale(1.45);
 }
 }
 .crew-hero-stamp {
@@ -741,7 +741,7 @@ img.crew-logo-image {
   .pilot-photo-field, .pilot-submit-field { grid-column: auto; }
 }
 .entity-crew .entity-card-art.crew-logo-art {
-  height: 230px !important;
+  height: 250px;
 }
 /* Disposition 2x2 des activités RedLine Crew */
 .facility-grid {
